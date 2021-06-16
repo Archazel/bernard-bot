@@ -1,4 +1,4 @@
 module.exports = {
   PREFIX: "?",
-  TOKEN: "token",
+  DISCORD_TOKEN: "token",
 }

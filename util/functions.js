@@ -1,5 +1,4 @@
 const fs = require("fs");
-
 let warningMessagePubStatus = (member, sendInGuild = Boolean(true)) => {
   let newMemberDisplayName = member.displayName.replace(/^[^a-zA-Z0-9]+/gi, "");
   if (newMemberDisplayName.length == 0) {
@@ -13,7 +12,7 @@ let warningMessagePubStatus = (member, sendInGuild = Boolean(true)) => {
 
 module.exports = (client) => {
   client.detectStatus = async (member) => {
-    let bdd = await JSON.parse(await fs.readFileSync("./bdd_pub.json"));
+    let bdd = await JSON.parse(fs.readFileSync("./bdd_pub.json"));
     const status = member.presence.activities[0];
     if (status && status.type === "CUSTOM_STATUS") {
       //détecte le custom status
