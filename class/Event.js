@@ -1,6 +1,9 @@
 'use strict';
 
  class Event {
+	 /**
+	  * @param {Client} client - discord client
+	  */
     constructor(client, {
 		name = null,
 		filename = __filename,
